@@ -8,6 +8,9 @@ export default function Card({ animal, uncovered }) {
     uncovered: PropTypes.bool.isRequired,
     animal: PropTypes.instanceOf(Animal).isRequired,
   };
+  function handleClick(event, prop) {
+    console.log(`${prop} clicked, ${event}`);
+    }
   const front = (
     <div className="card">
       <h1>{animal.name ? animal.name : 'Unbekannt'}</h1>
@@ -29,7 +32,8 @@ export default function Card({ animal, uncovered }) {
           {Object.keys(Animal.properties).map((property) => {
             const animalProperty = Animal.properties[property];
             return (
-              <tr key={property}>
+              <tr key={property}
+               onClick={evnt => handleClick(evnt, property)} >
                 <td>{animalProperty.label}</td>
                 <td>
                   {animal[property]} &nbsp;
