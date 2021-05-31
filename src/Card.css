@@ -14,7 +14,7 @@ h1 {
 } 
 
 .back {
-    height: 388px;
+    height: 412px;
     background-color: green;
 }   
 
@@ -27,8 +27,8 @@ td {
     padding: 5px 0;
 }
 
-tr:nth-child(2n -1) {
-    background-color: #ddd;
+tr:nth-child(2n -1).active, .active {
+    background-color: yellow;
 }
 
 img {
